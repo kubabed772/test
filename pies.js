@@ -34,8 +34,6 @@ function countRepositoryStats(pushes) {
             if (push.payload && push.payload.commits) {
                 for (let j = 0; j < push.payload.commits.length; j++) {
                     const commit = push.payload.commits[j];
-                    console.log('Additions:', commit.additions);
-                    console.log('Deletions:', commit.deletions);
                     changedFilesCount += (commit.additions || 0) + (commit.deletions || 0);
                 }
             }
