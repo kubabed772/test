@@ -34,8 +34,6 @@ function countRepositoryStats(pushes) {
             if (push.payload && push.payload.commits) {
                 for (let j = 0; j < push.payload.commits.length; j++) {
                     const commit = push.payload.commits[j];
-                    console.log('Additions:', commit.additions);
-                    console.log('Deletions:', commit.deletions);
                     changedFilesCount += (commit.additions || 0) + (commit.deletions || 0);
                 }
             }
@@ -57,7 +55,7 @@ function countRepositoryStats(pushes) {
 
 const githubUsername = 'kubabed772';
 const githubRepository = 'test';
-const githubToken = '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'; 
+const githubToken = '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'; 
 
 getGitHubPushes(githubUsername, githubRepository, githubToken)
     .then(pushes => {
